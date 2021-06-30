@@ -1,0 +1,241 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: #333;
+    font-family: 'Poppins';
+}
+h1{
+    font-size: 40px;
+    color: #f1f1f1;
+    text-align: center;
+    margin-bottom: 90px;
+    margin-top: 70px;
+}
+.container{
+    height: auto;
+    width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 880px) {
+    .container{
+        width: 100%;
+        justify-content: center;
+    }
+}
+.box{
+    height: 200px;
+    width: 200px;
+    background: salmon;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.contLigne{
+    width: 40px;
+    height: 42px;
+    cursor: pointer;
+    position: relative;
+}
+.lignes {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #000;
+    position: absolute;
+    transition: all .5s ease-in-out;
+}
+.lignes:nth-child(1){
+    top: 0px;
+}
+.lignes:nth-child(2){
+    top: 18px;
+}
+.lignes:nth-child(3){
+    top: 36px;
+}
+
+/* animation 1 */
+
+.btn1.active .lignes:nth-child(1){
+    top: 18px;
+    transform: rotate(135deg);
+}
+.btn1.active .lignes:nth-child(2){
+    transform: translateX(-20px);
+    opacity: 0;
+}
+.btn1.active .lignes:nth-child(3){
+    top: 18px;
+    transform: rotate(-135deg);
+
+}
+/*animation 2*/
+.btn2.active .lignes:nth-child(1){
+    top: 18px;
+
+}
+.btn2.active .lignes:nth-child(2){
+    opacity: 0;
+}
+
+.btn2.active .lignes:nth-child(3){
+    top: 18px;
+    transform: rotate(90deg);
+}
+
+/* animation 3 */
+
+.btn3.active .lignes:nth-child(1){
+    top: 18px;
+
+}
+.btn3.active .lignes:nth-child(2){
+
+    opacity: 0;
+}
+.btn3.active .lignes:nth-child(3){
+    top: 18px;
+}
+
+/* animation 4 */
+
+.btn4 .lignes {
+    transition: all .25s ease-out;
+}
+.btn4.active{
+    transform: rotate(90deg);
+}
+.btn4.active .lignes:nth-child(2){
+    transition: none;
+    opacity:0;
+}
+.btn4.active .lignes:nth-child(1),
+.btn4.active .lignes:nth-child(3) {
+    width: 35px;
+    transform-origin: right;
+}
+.btn4.active .lignes:nth-child(1){
+    transform: translateY(20px) rotate(45deg);
+}
+.btn4.active .lignes:nth-child(3){
+    transform: translateY(-20px) rotate(-45deg);
+}
+/*Animation 5*/
+
+.lignesM {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #000;
+    transition: all .3s ease-in-out;
+    position: relative;
+    margin: 12px auto;
+}
+.lignesM:nth-child(1){
+    margin-top: 0!important;
+}
+.btn5.active .lignesM:nth-child(2){
+    width: 0px;
+}
+.btn5.active{
+    transition: all .3s .3s ease-in-out;
+    transform: rotate(45deg);
+}
+.btn5.active .lignesM.lignes:nth-child(1),
+.btn5.active .lignesM.lignes:nth-child(3) {
+    transition-delay: .5s;
+}
+.btn5.active .lignesM:nth-child(1) {
+    transform: translateY(18px);
+}
+.btn5.active .lignesM:nth-child(3) {
+    transform: translateY(-18px) rotate(90deg);
+}
+
+/* Animations 6 */
+
+.btn6.active .lignes:nth-child(1){
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.btn6.active .lignes:nth-child(3){
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+/*Animation 7*/
+
+.btn7 .lignes:nth-child(1){
+    top: 0px;
+}
+.btn7 .lignes:nth-child(2){
+    top: 12px;
+}
+.btn7 .lignes:nth-child(3){
+    top: 24px;
+}
+.btn7.active .lignes:nth-child(1){
+    width: 30px;
+}
+.btn7.active .lignes:nth-child(2){
+    width: 40px;
+
+}.btn7.active .lignes:nth-child(3){
+    width: 50px;
+}
+.btn7{
+    transition: all 0.4s ease-in-out;
+}
+.btn7.active{
+    transform: rotate(30deg)
+}
+
+/*Animation 8*/
+
+.btn8 {
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+.btn8.active {
+    transform: rotate(45deg);
+}
+.btn8::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    transition: .3s all ease-in-out;
+}
+.btn8.active::before {
+    transition-delay: .3s!important;
+    border: 5px solid #000;
+}
+.btn8.active .lignes {
+    width: 35px;
+}
+.btn8.active .lignes:nth-child(2){
+    transition: all 0.1s ease-in!important;
+    opacity: 0;
+}
+.btn8.active .lignes:nth-child(1){
+    transform: translate(12.5px, 18px);
+}
+.btn8.active .lignes:nth-child(3){
+    transform: translate(12.5px, -18px) rotate(90deg);
+}
+
